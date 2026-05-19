@@ -1,0 +1,338 @@
+# 🎵 Groupie Tracker
+
+![Go](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat&logo=go&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+
+## 📖 Overview
+
+Groupie Tracker is a dynamic web application built with Go that consumes and displays music artist data from an external API.
+
+The application allows users to:
+
+- browse artists and bands
+- view detailed artist information
+- explore concert locations and dates
+- search artists and members
+- filter artists by creation year and album year
+
+This project focuses heavily on backend development concepts such as:
+
+- API consumption
+- JSON decoding
+- HTTP servers
+- dynamic routing
+- template rendering
+- data filtering
+- error handling
+- static file serving
+
+---
+
+# 🚀 Features
+
+## ✅ Artist Homepage
+
+Displays all artists in responsive cards including:
+
+- artist image
+- artist name
+- creation date
+- first album
+- members
+
+---
+
+## ✅ Dynamic Artist Pages
+
+Each artist has an individual page:
+
+```bash
+/artist/1
+```
+
+Artist pages display:
+
+- artist image
+- members
+- creation date
+- first album
+- concert locations
+- concert dates
+
+---
+
+## ✅ Search Functionality
+
+Users can search by:
+
+- artist name
+- member name
+
+Examples:
+
+```text
+queen
+freddie
+```
+
+---
+
+## ✅ Filtering System
+
+Artists can be filtered by:
+
+- creation year
+- first album year
+
+---
+
+## ✅ Relations Integration
+
+The application integrates multiple API endpoints including:
+
+- artists
+- relations
+
+Concert locations and dates are dynamically linked and rendered.
+
+---
+
+## ✅ Responsive Design
+
+The application is fully responsive and works across:
+
+- desktop
+- tablet
+- mobile devices
+
+---
+
+## ✅ Custom Error Handling
+
+Custom error pages for:
+
+- 404 Not Found
+- Invalid artist IDs
+- Internal server errors
+
+---
+
+# 🛠 Technologies Used
+
+- Go (Golang)
+- HTML5
+- CSS3
+- Go Templates
+- REST API
+- JSON
+
+---
+
+# 📂 Project Structure
+
+```bash
+groupie-tracker/
+│
+├── main.go
+├── api.go
+├── go.mod
+│
+├── structs/
+│   ├── artist.go
+│   └── relation.go
+│
+├── templates/
+│   ├── index.html
+│   ├── artist.html
+│   └── error.html
+│
+├── static/
+│   └── style.css
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/brodapeethar/groupie-tracker.git
+```
+
+---
+
+## 2️⃣ Navigate Into the Project
+
+```bash
+cd groupie-tracker
+```
+
+---
+
+## 3️⃣ Initialize Go Modules
+
+```bash
+go mod tidy
+```
+
+---
+
+## 4️⃣ Run the Application
+
+```bash
+go run .
+```
+
+---
+
+# 🌐 Open in Browser
+
+Visit:
+
+```bash
+http://localhost:7070
+```
+
+---
+
+# 🔗 API Used
+
+This project uses the Groupie Tracker API:
+
+```bash
+https://groupietrackers.herokuapp.com/api
+```
+
+Endpoints used:
+
+| Endpoint | Purpose |
+|---|---|
+| `/artists` | Artist information |
+| `/relation` | Concert locations and dates |
+
+---
+
+# 🧠 Core Concepts Learned
+
+This project helped reinforce important backend development concepts including:
+
+## Backend Development
+
+- HTTP servers
+- route handling
+- query parameters
+- dynamic routing
+
+---
+
+## API Handling
+
+- API requests
+- JSON decoding
+- struct mapping
+- nested data structures
+
+---
+
+## Go Concepts
+
+- structs
+- slices
+- maps
+- error handling
+- package organization
+
+---
+
+## Frontend Integration
+
+- template rendering
+- dynamic HTML
+- static file serving
+- responsive CSS
+
+---
+
+# 🔍 Search & Filtering Logic
+
+The application dynamically filters artists based on:
+
+- artist names
+- member names
+- creation dates
+- album years
+
+This is handled server-side using query parameters.
+
+Example:
+
+```bash
+/?search=queen
+```
+
+---
+
+# ❌ Error Handling
+
+The application includes custom error pages for:
+
+| Error | Description |
+|---|---|
+| 400 | Invalid artist ID |
+| 404 | Page not found |
+| 500 | Internal server error |
+
+---
+
+# 📱 Responsive UI
+
+The UI adapts to different screen sizes using:
+
+- CSS Grid
+- Flexbox
+- media queries
+
+---
+
+# 📸 Screenshots
+
+## Homepage
+
+Add homepage screenshot here.
+
+---
+
+## Artist Page
+
+Add artist page screenshot here.
+
+---
+
+# 🚧 Future Improvements
+
+Possible future enhancements include:
+
+- autocomplete search
+- advanced filtering
+- sorting system
+- pagination
+- API caching
+- dark/light mode toggle
+- animations
+- Docker support
+
+---
+
+# 👨‍💻 Author
+
+Developed by **Olajide Peter**
+
+---
+
+# 📜 License
+
+This project is for educational purposes.

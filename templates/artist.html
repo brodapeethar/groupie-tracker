@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.Name}}</title>
+
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 15px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<body>
+
+<div class="artist-page container">
+
+    <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
+
+    <h1>{{.Artist.Name}}</h1>
+    <p style="text-align:center; color:#cbd5e1; margin-bottom:20px;">
+    Explore concerts, members and album history.
+    </p>
+
+    <p><strong>Creation Date:</strong> {{.Artist.CreationDate}}</p>
+
+    <p><strong>First Album:</strong> {{.Artist.FirstAlbum}}</p>
+
+    <br>
+
+    <h2>Members</h2>
+
+    {{range .Artist.Members}}
+        <p>{{.}}</p>
+    {{end}}
+
+    <div class="concert-box">
+
+        <h2>Concert Locations & Dates</h2>
+
+        {{range $location, $dates := .Relation.DatesLocations}}
+
+            <h3>{{$location}}</h3>
+
+            {{range $dates}}
+                <p>{{.}}</p>
+            {{end}}
+
+        {{end}}
+
+    </div>
+
+    <a href="/" class="back-btn">← Back Home</a>
+
+</div>
+
+</body>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Groupie Tracker</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <h1>Groupie Tracker</h1>
+
+    <p style="text-align:center; margin-bottom:30px; color:#cbd5e1; font-size:18px;">
+    Discover artists, bands, concert locations and music history 🎶
+    </p>
+
+    
+    <form action="/" method="GET" class="search-box">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search artist or member..."
+        >
+
+         <input
+        type="number"
+        name="album"
+        placeholder="First album year"
+
+        >
+
+        <button type="submit">Filter</button>
+
+    </form>
+
+    <div class="container">
+
+        {{range .}}
+
+        <a href="/artist/{{.ID}}">
+
+            <div class="card">
+
+                <img src="{{.Image}}" alt="{{.Name}}">
+
+                <h2>{{.Name}}</h2>
+
+                <p><strong>Created:</strong> {{.CreationDate}}</p>
+
+                <p><strong>First Album:</strong> {{.FirstAlbum}}</p>
+
+                <h3>Members</h3>
+
+                {{range .Members}}
+                    <p>{{.}}</p>
+                {{end}}
+
+            </div>
+
+        </a>
+
+        {{end}}
+
+    </div>
+
+</body>
+</html>

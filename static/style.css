@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 45px;
+    background: linear-gradient(to right, #38bdf8, #a855f7, #ec4899);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 230px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background-color: #1e293b;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #334155;
+}
+
+.search-box input::placeholder {
+    color: #94a3b8;
+}
+
+.search-box button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+}
+
+.search-box button:hover {
+    transform: translateY(-2px) scale(1.03);
+    opacity: 0.9;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(30, 41, 59, 0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.35s;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.04),
+        transparent
+    );
+    transform: rotate(25deg);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(139,92,246,0.35);
+    border-color: rgba(168,85,247,0.4);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    color: #f8fafc;
+}
+
+.card p {
+    margin: 6px 0;
+    color: #cbd5e1;
+}
+
+.card h3 {
+    margin-top: 15px;
+    color: #38bdf8;
+}
+
+.artist-page {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(30,41,59,0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.artist-page img {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.artist-page h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.concert-box {
+    margin-top: 25px;
+    background: #111827;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+}
+
+.concert-box h3 {
+    color: #f472b6;
+    margin-top: 15px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: linear-gradient(to right, #06b6d4, #8b5cf6);
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box input {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
